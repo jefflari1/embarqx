@@ -64,9 +64,9 @@ export function Navigation() {
               </div>
               <span
                 className="font-display font-semibold text-xl tracking-[0.08em] text-fg-primary"
-                style={{ fontFamily: "var(--font-cormorant)" }}
+                style={{ fontFamily: "var(--font-cormorant)", whiteSpace: "nowrap" }}
               >
-                Embarq<span className="text-cyan">X</span>
+                Embarq<span className="text-cyan" style={{ marginLeft: "-0.08em" }}>X</span>
               </span>
             </Link>
 

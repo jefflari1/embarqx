@@ -37,14 +37,14 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-3 mb-6 group" aria-label="EmbarqX">
-              <div className="w-8 h-8 border border-cyan-DEFAULT/40 rotate-45 flex items-center justify-center group-hover:border-cyan-DEFAULT/70 transition-colors duration-300">
-                <div className="w-2 h-2 bg-cyan-DEFAULT rotate-0" />
+              <div className="w-8 h-8 border border-cyan/40 rotate-45 flex items-center justify-center group-hover:border-cyan/70 transition-colors duration-300">
+                <div className="w-2 h-2 bg-cyan rotate-0" />
               </div>
               <span
                 className="font-display font-semibold text-xl tracking-[0.08em] text-fg-primary"
-                style={{ fontFamily: "var(--font-cormorant)" }}
+                style={{ fontFamily: "var(--font-cormorant)", whiteSpace: "nowrap" }}
               >
-                Embarq<span className="text-cyan-DEFAULT">X</span>
+                Embarq<span className="text-cyan" style={{ marginLeft: "-0.08em" }}>X</span>
               </span>
             </Link>
 
@@ -58,7 +58,7 @@ export function Footer() {
               <p className="text-fg-subtle text-xs tracking-[0.1em] uppercase">Begin a conversation</p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-cyan-DEFAULT text-sm font-medium hover:text-cyan-bright transition-colors group"
+                className="inline-flex items-center gap-2 text-cyan text-sm font-medium hover:text-cyan-bright transition-colors group"
               >
                 partnerships@embarqx.com
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
