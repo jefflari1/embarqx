@@ -29,20 +29,63 @@ export function Hero() {
           {/* Placeholder ocean gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#020a1a] via-[#030810] to-[#030508]" />
 
-          {/* Simulated depth layers */}
-          <div className="absolute inset-0 opacity-40"
+          {/* Ocean depth pools */}
+          <div
+            className="absolute inset-0"
             style={{
-              backgroundImage: `
-                radial-gradient(ellipse 80% 60% at 20% 80%, rgba(0,80,140,0.3) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0,40,80,0.2) 0%, transparent 60%)
-              `
+              background: `
+                radial-gradient(ellipse 90% 65% at 12% 88%, rgba(0,55,130,0.28) 0%, transparent 54%),
+                radial-gradient(ellipse 65% 45% at 82% 18%, rgba(0,32,80,0.16) 0%, transparent 52%),
+                radial-gradient(ellipse 50% 38% at 52% 58%, rgba(0,65,145,0.1) 0%, transparent 50%)
+              `,
             }}
           />
 
-          {/* Subtle wave shimmer */}
-          <div className="absolute bottom-0 left-0 right-0 h-64 opacity-20"
+          {/* Premium scan-line texture */}
+          <div
+            className="absolute inset-0"
             style={{
-              backgroundImage: "linear-gradient(180deg, transparent 0%, rgba(0,200,224,0.05) 70%, rgba(0,200,224,0.02) 100%)"
+              opacity: 0.024,
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,1) 3px, rgba(255,255,255,1) 4px)",
+            }}
+          />
+
+          {/* Horizon line */}
+          <div
+            className="absolute left-0 right-0"
+            style={{
+              top: "52%",
+              height: "1px",
+              background:
+                "linear-gradient(90deg, transparent 0%, rgba(0,200,224,0.07) 18%, rgba(0,200,224,0.2) 50%, rgba(0,200,224,0.07) 82%, transparent 100%)",
+            }}
+          />
+
+          {/* Animated horizon glow — slow breathing ocean light */}
+          <motion.div
+            className="absolute left-0 right-0"
+            style={{
+              top: "48%",
+              height: "200px",
+              background:
+                "radial-gradient(ellipse 65% 100% at 50% 0%, rgba(0,200,224,0.05) 0%, transparent 100%)",
+            }}
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatType: "mirror",
+            }}
+          />
+
+          {/* Bottom shimmer */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-64"
+            style={{
+              background:
+                "linear-gradient(180deg, transparent 0%, rgba(0,200,224,0.028) 70%, rgba(0,200,224,0.012) 100%)",
             }}
           />
 
@@ -62,8 +105,10 @@ export function Hero() {
       </motion.div>
 
       {/* Ambient glows */}
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full bg-cyan-DEFAULT/5 blur-[100px] pointer-events-none z-10 animate-blob" />
-      <div className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-gold-DEFAULT/4 blur-[80px] pointer-events-none z-10 animate-blob" style={{ animationDelay: "3s" }} />
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full pointer-events-none z-10 animate-blob"
+        style={{ background: "rgba(0,200,224,0.05)", filter: "blur(100px)" }} />
+      <div className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] rounded-full pointer-events-none z-10 animate-blob"
+        style={{ background: "rgba(201,168,76,0.04)", filter: "blur(80px)", animationDelay: "3s" }} />
 
       {/* Hero Content */}
       <motion.div
